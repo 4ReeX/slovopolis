@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Телепат</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <meta name='viewport' content='width=device-width,initial-scale=0.9'/>
+    <meta content='true' name='HandheldFriendly'/>
+    <meta content='width' name='MobileOptimized'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="bg" onload="wellcome()">
+<!--<body class="bg">-->
+<div class="layout">
+    <div class="header">
+        <a class="coin" href="store.html">
+            <div class="amount">
+                <div class="icon-block">
+                    <img src="img/wallet/star.svg" alt="">
+                </div>435
+            </div>
+        </a>
+        <div class="lvl">
+            1
+        </div>
+        <a class="cri" href="store.html">
+            <div class="amount">
+                125<div class="icon-block">
+                <img src="img/cri.png" alt="">
+            </div>
+            </div>
+        </a>
+    </div>
+    <div class="center">
+        <div class="level">
+            <div class="block-level">
+                <div class="c1">
+                    <div class="c2">
+                        <div class="c3">
+                            <div class="number">1</div>
+                            <div class="text">Уровень</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-group">
+                <a class="btn new delay-2" onclick="startGame();">
+                    <div class="btn-text">
+                        Новая игра
+                    </div>
+                </a>
+                <a class="btn continue" onclick="startGame();">
+                    <div class="btn-text">
+                        Продолжить
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="footer" id="footer">
+        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.html">
+            <div class="icon-block">
+                <img src="img/home.svg" alt="" class="icon home">
+            </div>
+            <span class="text">
+                ГЛАВНАЯ
+            </span>
+        </a>
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
+            <div class="icon-block">
+                <img src="img/user.svg" alt="" class="icon">
+            </div>
+        </a>
+        <a class="sm-btn" id="buttonStore" href="store.html">
+            <div class="icon-block">
+                <img src="img/store.png" alt="" class="icon">
+            </div>
+        </a>
+        <a class="sm-btn" id="buttonCoupon" href="coupons.html">
+            <div class="icon-block">
+                <img src="img/coupin.svg" alt="" class="icon">
+            </div>
+            <span class="coupons-amount">74</span>
+        </a>
+        <a class="sm-btn" title="Правила игры" onclick="loadRules();" id="buttonRules">
+            <div class="icon-block">
+                <img src="img/help.svg" alt="" class="icon">
+            </div>
+        </a>
+    </div>
+    <div class="sub-footer" id="title">
+        <h1 class="title"><a href="legal.html">Пользовательское соглашение</a> | <a href="#">Политика обработки данных</a></h1>
+    </div>
+    <div class="shadow hide" onclick="closePopupShadow();"></div>
+    <div class="popup hide">
+        <div class="popup-content"></div>
+    </div>
+</div>
+<div class="zaglushka">
+    <div class="col"><img src="img/sova-rotate.png" alt=""></div>
+    <div class="col">Пожалуйста переверните телефон в <br>
+        <span>вертикальное положение.</span> <br> Так ведь намного удобнее ;)
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

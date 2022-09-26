@@ -1,0 +1,48 @@
+ <div class="title relative">
+        <div class="big red">Неудача!</div>
+        <div class="small">попробуйте еще раз...</div>
+        <div class="warning">Правильное слово: <span id="popFailWord">таракан</span></div>
+    </div>
+    <div class="content-block">
+        <div class="image">
+            <img src="img/lose.svg" alt="" class="imgwin">
+        </div>
+        <div class="prizes">
+            <div class="row">
+                <div class="icon"><img src="img/wallet/staricon.png" alt=""></div>
+                <div class="value">x<span class="amount amount-popup" data-num="125">0</span></div>
+            </div>
+            <div class="row">
+                <div class="icon"><img src="img/wallet/criicon.png" alt=""></div>
+                <div class="value">x<span class="amount amount-popup" data-num="125">0</span></div>
+            </div>
+            <div class="row hide">
+                <div class="icon"><img src="img/wallet/promocode.png" alt=""></div>
+                <div class="value">x<span class="amount amount-popup" data-num="125">0</span></div>
+            </div>
+            <div class="row hide">
+                <div class="icon"><img src="img/wallet/puzzleicon.png" alt=""></div>
+                <div class="value">x<span class="amount amount-popup" data-num="125">0</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-footer">
+        <div class="btn" onclick="startGame()">OK</div>
+    </div>
+<script>
+    $(document).ready(function () {
+
+        $('.amount-popup').each(function () {
+            $(this).prop('amount',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+    });
+</script>

@@ -1,0 +1,23 @@
+<div class="lottery-title">
+    Ежедневаная лотерея
+</div>
+
+<div class="lottery">
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+    <div class="lottery-item"><img src="img/case-close.svg" alt=""></div>
+</div>
+<script>
+    $(".lottery-item").click(function() {
+        $(this).load("open-case.html");
+        $(".lottery-item").toggleClass("hide");
+        $(this).toggleClass("open hide");
+        $(this).load("prize.html");
+});</script>
+
