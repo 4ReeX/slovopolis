@@ -5,6 +5,7 @@ function closePopupShadow() {
     $('#popups').toggleClass("hide");
     $('.popup, .shadow').toggleClass("hide");
     $('.shadow').toggleClass("blur");
+
 }
 function startGame() {
     $('.popup, .shadow').toggleClass("hide");
@@ -70,7 +71,7 @@ function closeWellcome() {
 
 function letter1() {
     $('.popup, .shadow').toggleClass("hide");
-    $('.popup-content').load("letter.html");
+    $('.popup-content').load("letter1.html");
     $('.shadow').addClass("blur");
 }
 
