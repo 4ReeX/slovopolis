@@ -1,0 +1,68 @@
+<div class="difficult">
+    <div class="sky"></div>
+    <div class="city"></div>
+    <div class="block">
+       <div class="bubl">
+            <div class="speech" id="animatable">
+
+            </div>
+       </div>
+    </div>
+    <div class="block">
+        <img src="img/sova-head.png" alt="">
+    </div>
+
+    <div class="row">
+        <div class="key green"></div>
+        <div class="key yellow"></div>
+        <div class="key red"></div>
+    </div>
+    <div class="row">
+        <div class="diff">&nbsp; не выбран</div>
+    </div>
+    <div class="btn" onclick="play();">ОК</div>
+</div>
+<script>
+        var $element = $('#animatable');
+        var newText = 'Выберите уровень сложности';
+        bubbleText({
+            element: $element,
+            newText: newText,
+            speed: 2000,
+            repeat: 0,
+        });
+
+    $(".difficult .key").click(function () {
+        $(".difficult .key").removeClass("active");
+        $(this).toggleClass("active");
+        if ($(this).hasClass("green")) {
+            $(".diff").text("легкий");
+            $element.text('');
+            bubbleText({
+                element: $element,
+                newText: 'длина слова от трех до пяти букв (3-5 слов в кроссворде)',
+                speed: 2000,
+                repeat: 0,
+            });
+        } else if ($(this).hasClass("yellow")) {
+            $(".diff").text("средний");
+            $element.text('');
+            bubbleText({
+                element: $element,
+                newText: 'длина слова от трех до семи букв (5-7 слов в кроссворде)',
+                speed: 2000,
+                repeat: 0,
+            });
+        } else {
+            $(".diff").text("сложный");
+            $element.text('');
+            bubbleText({
+                element: $element,
+                newText: 'длина слова от трех до девяти букв (7-10 слов в кроссворде)',
+                speed: 2000,
+                repeat: 0,
+            });
+        }
+    });
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Телепат</title>
+    <link rel="stylesheet" href="css/styles.css?1234">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+</head>
+<body onload="loginscreen();" class="bg">
+<div id="background"></div>
+<div class="layout">
+    <div class="center" id="loadContent">
+        <div class="login-form">
+            <h1>АВТОРИЗАЦИЯ</h1>
+            <input type="tel" name="tel" id="login" placeholder="Введите телефон">
+            <input type="password" name="pass" id="pass" placeholder="Введите код из SMS">
+            <a href="index.html" class="btn">Войти
+            </a>
+            <a href="javascript:agree();" class="agree">Пользовательское соглашение</a>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+
+    </div>
+    <div class="popups hide" id="popups"></div>
+</div>
+<div class="darkpop hide"></div>
+<div class="pop hide" id="pop">
+    <div class="title"></div>
+    <a class="close" onclick="closePopup();">
+        <div class="icon-block">
+            <img src="img/close.svg" alt="" class="icon">
+        </div>
+    </a>
+    <div class="content-block">
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
