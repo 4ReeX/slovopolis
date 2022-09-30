@@ -281,6 +281,15 @@
      animation: opa 4s ease-in-out;
      animation-iteration-count: infinite;
 }
+.blur {
+    -webkit-animation: blur 0,3s ease-in-out;
+    -moz-animation: blur 0,3s ease-in-out;
+    -ms-animation: blur 0,3s ease-in-out;
+    -o-animation: blur 0,3s ease-in-out;
+    animation: blur 0,3s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
 @-webkit-keyframes warning {
     0% {
@@ -376,27 +385,27 @@
     }
 }
 
-@-webkit-keyframes indown {
+@-webkit-keyframes blur {
     0% {
-        bottom: -1000px;
+        backdrop-filter: blur(0px);
     }
     100% {
-        bottom: auto;
+        backdrop-filter: blur(6px);
     }
 }
-@-o-keyframes indown {
+@-o-keyframes blur {
     0% {
-       bottom: -1000px;
+        backdrop-filter: blur(0px);
     }
     100% {
-       bottom: auto;
+        backdrop-filter: blur(6px);
     }
 }
-@keyframes indown {
+@keyframes blur {
     0% {
-        bottom: -1000px;
+        backdrop-filter: blur(0px);
     }
     100% {
-        bottom: auto;
+        backdrop-filter: blur(6px);
     }
 }

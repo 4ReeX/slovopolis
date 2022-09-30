@@ -4,8 +4,8 @@ $(".sm-btn").click(function () {
 function closePopupShadow() {
     $('#popups').toggleClass("hide");
     $('.popup, .shadow').toggleClass("hide");
-};
-
+    $('.shadow').toggleClass("blur");
+}
 function startGame() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('difficult.html');
@@ -30,6 +30,7 @@ function loadLose() {
 }
 function closeBtn() {
     $('.popup, .shadow').toggleClass("hide");
+    $('.shadow').toggleClass("blur");
 }
 function loading() {
     $('.send').toggleClass("hide");
@@ -40,6 +41,7 @@ function loadRules() {
     $('.popup').removeClass("overflow-v");
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('rules.html');
+    $('.shadow').toggleClass("blur");
 }
 function nextRules() {
     $('.popup').toggleClass("overflow-v");
@@ -52,12 +54,14 @@ function nextBonus() {
 function loadPuzzle() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('puzzle.html');
+    $('.shadow').toggleClass("blur");
 }
 
 function wellcome() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup').toggleClass("overflow-v");
     $('.popup-content').load("wellcome.html");
+    $('.shadow').toggleClass("blur");
 }
 function closeWellcome() {
     $('.popup, .shadow').toggleClass("hide");
@@ -65,12 +69,14 @@ function closeWellcome() {
 
 function letter1() {
     $('.popup, .shadow').toggleClass("hide");
-    $('.popup-content').load('letter1.html');
+    $('.popup-content').load("letter.html");
+    $('.shadow').addClass("blur");
 }
 
 function letter2() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('letter2.html');
+    $('.shadow').addClass("blur");
 }
 
 function goToURL() {
@@ -84,6 +90,7 @@ function buyLink() {
 function buyLink() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('buy.html');
+    $('.shadow').toggleClass("blur");
 }
 
 

@@ -18,35 +18,6 @@
 }
 
 @media screen and (max-width: 640px) {
-    .work {
-        display: block;
-        position: relative;
-        width: 90%;
-        height: auto;
-        bottom: 140px;
-    }
-    .bg-work {
-        display: block;
-        background: #ffffff url(../img/street.png) no-repeat;
-        background-size: 100vw 100vh;
-        background-position-x: center;
-        background-position-y: -20px;
-    }
-    .my-coupons .text {
-        font-size: 20px;
-        background: #fde034;
-        padding: 10px 20px;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border: 4px solid #000000;
-        -webkit-box-shadow: 0px 5px 10px 2px rgb(34 60 80 / 20%);
-        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 5px 10px 2px rgb(34 60 80 / 20%);
-        color: #000000;
-    }
     .sub-header {
         position: relative;
         top: 0;
@@ -59,10 +30,12 @@
 
     .bg {
         background: url(../img/bg-mob.jpg);
-        background-size: 100%;
         background-repeat: no-repeat;
-        background-size: auto 100vh!important;
         background-position-x: 40%;
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+        background-size: cover!important;
     }
 
 
@@ -165,8 +138,8 @@
 
     .footer {
         position: relative;
-        bottom: 0;
         padding: 0 5px;
+        background: #ffffff;
     }
 
     .pop .text {
@@ -193,13 +166,8 @@
         z-index: 999;
     }
 
-    .coupons {
-        bottom: 100px;
-        max-height: 90%;
-    }
-
     .game .row .key {
-
+        font-size: 7vh;
     }
 
     .pop {
@@ -346,9 +314,6 @@
 }
 
 @media screen and (max-height: 667px) {
-    .coupons {
-        height: 85%;
-    }
 }
 @media only screen and (width : 375px) and (height : 667px)
 {

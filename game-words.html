@@ -102,16 +102,7 @@
                     <div class="key vis"></div>
                 </div>
             </div>
-            <div class="row helper">
-                <div class="sm-btn" title="Убрать букву" onclick="letter1();">
-                    <div class="icon-block gray">
-                        -A
-                    </div>
-                    <div class="value">
-                        <div class="amount">5</div>
-                        <div class="cri"><img src="img/cri.png" alt=""></div>
-                    </div>
-                </div>
+            <div class="row">
                 <div class="word">
                     <div class="row">
                         <div class="key">А</div>
@@ -123,6 +114,18 @@
                         <div class="key">Т</div>
                     </div>
                 </div>
+            </div>
+            <div class="row center w100">
+                <div class="column helper">
+                    <div class="sm-btn" title="Убрать букву" onclick="letter1();">
+                        <div class="icon-block gray">
+                            -A
+                        </div>
+                        <div class="value">
+                            <div class="amount">5</div>
+                            <div class="cri"><img src="img/cri.png" alt=""></div>
+                        </div>
+                    </div>
                     <div class="sm-btn" title="Показать букву не на своем месте" onclick="letter2();">
                         <div class="icon-block yellow">
                             W
@@ -132,19 +135,19 @@
                             <div class="cri"><img src="img/cri.png" alt=""></div>
                         </div>
                     </div>
-
+                </div>
+                <div class="menu" id="radial">
+                    <div class="toggle"><img src="img/shuffle.png" alt=""></div>
+                    <ul class="circle-menu letters-6">
+                        <li class="elem"  style="--i:0;" id="one" onclick="loadWin()"><div class="letter">В</div></li>
+                        <li class="elem"  style="--i:1;" onclick="loadLose();"><div class="letter">П</div></li>
+                        <li class="elem"  style="--i:2;" id="two"><div class="letter">С</div></li>
+                        <li class="elem"  style="--i:3;"><div class="letter">О</div></li>
+                        <li class="elem"  style="--i:4;"><div class="letter">Л</div></li>
+                        <li class="elem"  style="--i:5;"><div class="letter">С</div></li>
+                    </ul>
+                </div>
             </div>
-           <div class="menu" id="radial">
-               <div class="toggle"><img src="img/shuffle.png" alt=""></div>
-               <ul class="circle-menu letters-6">
-                   <li class="elem"  style="--i:0;" id="one" onclick="loadWin()"><div class="letter">В</div></li>
-                   <li class="elem"  style="--i:1;" onclick="loadLose();"><div class="letter">П</div></li>
-                   <li class="elem"  style="--i:2;" id="two"><div class="letter">С</div></li>
-                   <li class="elem"  style="--i:3;"><div class="letter">О</div></li>
-                   <li class="elem"  style="--i:4;"><div class="letter">Л</div></li>
-                   <li class="elem"  style="--i:5;"><div class="letter">С</div></li>
-               </ul>
-           </div>
 
         </div>
     </div>
