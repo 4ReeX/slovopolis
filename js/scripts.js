@@ -9,6 +9,7 @@ function closePopupShadow() {
 function startGame() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('difficult.html');
+    $('.shadow').addClass("blur");
 }
 function play() {
     $('.popup, .shadow').toggleClass("hide");

@@ -380,7 +380,8 @@ a {
     align-items: center;
     position: absolute;
     left: 10px;
-    bottom: 30px;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .btn-icon {
@@ -553,6 +554,7 @@ a {
     box-sizing: border-box;
     max-width: 640px;
     width: 100%;
+    position: relative;
 }
 
 
@@ -2847,9 +2849,11 @@ span.icon-back {
     width: 100%;
 }
 
+
+/*radial-menu-start-css*/
 .menu {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2861,8 +2865,8 @@ span.icon-back {
 .toggle {
     background: #ffffff;
     background-size: 100%;
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     border-radius: 300px;
     display: flex;
     flex-direction: row;
@@ -2884,14 +2888,14 @@ ul.circle-menu {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
 }
 
 ul.circle-menu li {
     position: absolute;
     list-style: none;
-    transform-origin: 90px;
+    transform-origin: 110px;
     left: 0;
     border-radius: 300px;
     height: 50px;
@@ -2967,13 +2971,15 @@ ul.circle-menu.letters-8 li .letter {
 .word .row {
     display: flex;
     flex-direction: row;
-    height: 20px;
+    height: 25px;
     position: relative;
     width: auto;
+    margin: 3px 0;
     background: #a552ad;
     border-radius: 5px;
     align-items: center;
     padding: 0 20px;
+    font-size: 18px;
 }
 
 .vis {
@@ -3161,4 +3167,26 @@ a.winners:hover {
     height: 60px;
     background: url(../img/boubleafter.svg) no-repeat;
     background-size: contain;
+}
+.diff {
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #000000;
+}
+.diff.yellow {
+    background-color: var(--yellow-color) !important;
+    color: #ffffff;
+}
+
+.diff.green {
+    background-color: var(--green-color) !important;
+    color: #ffffff;
+}
+
+.diff.red {
+    background-color: var(--red-color) !important;
+    color: #ffffff;
 }

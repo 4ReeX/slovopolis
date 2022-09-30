@@ -3,8 +3,9 @@
     <div class="city"></div>
     <div class="block">
        <div class="bubl">
-            <div class="speech" id="animatable">
-
+            <div class="speech">
+                <div class="row diff"></div>
+                <span id="animatable"></span>
             </div>
        </div>
     </div>
@@ -17,9 +18,6 @@
         <div class="key yellow"></div>
         <div class="key red"></div>
     </div>
-    <div class="row">
-        <div class="diff">&nbsp; не выбран</div>
-    </div>
     <div class="btn" onclick="play();">ОК</div>
 </div>
 <script>
@@ -28,40 +26,48 @@
         bubbleText({
             element: $element,
             newText: newText,
-            speed: 2000,
-            repeat: 0,
+            speed: 1000,
+            repeat: false,
         });
-
     $(".difficult .key").click(function () {
         $(".difficult .key").removeClass("active");
         $(this).toggleClass("active");
         if ($(this).hasClass("green")) {
-            $(".diff").text("легкий");
             $element.text('');
             bubbleText({
                 element: $element,
-                newText: 'длина слова от трех до пяти букв (3-5 слов в кроссворде)',
-                speed: 2000,
-                repeat: 0,
+                newText: 'Длина слова от трех до пяти букв (3-5 слов в кроссворде)',
+                speed: 1500,
+                repeat: false,
             });
+            $(".diff").text("ЛЕГКИЙ");
+            $(".diff").addClass("green");
+            $(".diff").removeClass("yellow");
+            $(".diff").removeClass("red");
         } else if ($(this).hasClass("yellow")) {
-            $(".diff").text("средний");
             $element.text('');
             bubbleText({
                 element: $element,
-                newText: 'длина слова от трех до семи букв (5-7 слов в кроссворде)',
-                speed: 2000,
-                repeat: 0,
+                newText: "Длина слова от трех до семи букв (5-7 слов в кроссворде)",
+                speed: 1500,
+                repeat: false,
             });
+            $(".diff").text("СРЕДНИЙ");
+            $(".diff").removeClass("green");
+            $(".diff").addClass("yellow");
+            $(".diff").removeClass("red");
         } else {
-            $(".diff").text("сложный");
             $element.text('');
             bubbleText({
                 element: $element,
-                newText: 'длина слова от трех до девяти букв (7-10 слов в кроссворде)',
-                speed: 2000,
-                repeat: 0,
+                newText: 'Длина слова от трех до девяти букв (7-10 слов в кроссворде)',
+                speed: 1500,
+                repeat: false,
             });
+            $(".diff").text("СЛОЖНЫЙ");
+            $(".diff").removeClass("green");
+            $(".diff").removeClass("yellow");
+            $(".diff").addClass("red");
         }
     });
 
