@@ -86,12 +86,12 @@ a {
 }
 
 .bg {
-    background: url(../img/bg1.svg);
+    background: url(../img/wordly.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     width: 100%;
     background-clip: padding-box;
-    background-size: auto 100%!important;
+    background-size: cover;
     height: 100%;
     background-attachment: fixed;
 }
