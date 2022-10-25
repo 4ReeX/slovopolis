@@ -2779,9 +2779,19 @@ span.icon-back {
     background-size: 100%;
     transform: scale(0.7);
 }
-
 .overflow-v {
     overflow: visible !important;
+    background: #191C22;
+    color: #ffffff !important;
+}
+.overflow-v h1 {
+    color: #ffffff;
+}
+.overflow-v .desc, .overflow-v a.link {
+    color: #ffffff;
+}
+.overflow-v .icon-block .icon {
+    filter: brightness(60.5);
 }
 
 .one.up_down.delay-1 {
