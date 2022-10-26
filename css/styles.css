@@ -3200,3 +3200,6 @@ a.winners:hover {
     background-color: var(--red-color) !important;
     color: #ffffff;
 }
+.speech {
+    color: #000;
+}
