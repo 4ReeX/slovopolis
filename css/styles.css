@@ -457,6 +457,7 @@ a {
 
 .sm-btn .value .cri img {
     max-width: 100%;
+    filter: hue-rotate(177deg);
 }
 
 .sm-btn.disable {
@@ -2582,7 +2583,6 @@ span.icon img {
     align-items: center;
     width: 100%;
     height: 100%;
-    overflow-y: auto;
 }
 
 .flex-end {
