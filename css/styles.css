@@ -2197,6 +2197,7 @@ datalist#datalist {
     transform: translate(-50%, -50%);
     left: 50%;
     background: rgb(71 70 103 / 88%);
+    min-height: 300px;
 }
 
 .login-form input {
