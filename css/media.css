@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @media screen and (min-width: 1340px) {
     .bg {
         background-size: cover;
@@ -13,14 +20,22 @@
 
     #pop .img-block {
         height: 40vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 }
 
 @media screen and (max-width: 640px) {
+    body {
+        position: fixed;
+    }
     .sub-header {
         position: relative;
         top: 0;
+    }
+    .coupons {
+
     }
 
     .header {
@@ -40,6 +55,7 @@
 
 
     .layout {
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding: 0;
     }
@@ -107,6 +123,8 @@
         height: auto;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         z-index: 0;
         opacity: 0.5;
@@ -126,9 +144,18 @@
     }
 
     .profile {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: 100%;
         width: 100%;
@@ -166,7 +193,7 @@
     }
 
     .game .row .key {
-        font-size: 7vh;
+        font-size: 35px;
     }
 
     .pop {
@@ -176,14 +203,25 @@
     .thegame {
         width: 100%;
         height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         bottom: 120px !important;
         position: relative;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -193,20 +231,33 @@
     }
 
     .btn-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 15px;
         width: auto;
         position: absolute;
         margin-left: -320px;
         top: 50%;
+        -webkit-transform: translate(0, -90%);
+        -ms-transform: translate(0, -90%);
         transform: translate(0, -90%);
     }
     .game .row .key {
-        width: 0.9em;
-        height: 0.9em;
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        min-height: 43px;
     }
 }
 
@@ -267,7 +318,12 @@
 
 @media screen and (max-width: 360px) and (max-height: 595px) {
     .btn-block-help {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
         flex-direction: column !important;
         gap: 15px;
         position: absolute !important;
@@ -287,15 +343,26 @@
         height: 180px;
     }
     ul.circle-menu li {
+        -webkit-transform-origin: 90px!important;
+        -ms-transform-origin: 90px!important;
         transform-origin: 90px!important;
     }
 }
 
 @media screen and (width: 360px) and (min-height: 596px) {
     .btn-block-help {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         gap: 15px;
@@ -341,15 +408,26 @@
         height: 180px;
     }
     ul.circle-menu li {
+        -webkit-transform-origin: 90px!important;
+        -ms-transform-origin: 90px!important;
         transform-origin: 90px!important;
     }
 }
 @media only screen and (width : 375px) and (height : 667px)
 {
     .btn-block-help {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         gap: 15px;
@@ -365,6 +443,8 @@
         height: 200px;
     }
     ul.circle-menu li {
+        -webkit-transform-origin: 100px;
+        -ms-transform-origin: 100px;
         transform-origin: 100px;
     }
     .toggle {
@@ -379,7 +459,12 @@
         margin-left: 30px;
     }
     .btn-block-help {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
         flex-direction: column !important;
         gap: 15px;
         position: absolute !important;
@@ -403,12 +488,22 @@
         top: 0;
         bottom: 0;
         background-color: #8BC6EC;
+        background-image: -o-linear-gradient(315deg, #8BC6EC 0%, #9599E2 100%);
         background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
         color: #ffffff;
         font-size: 18px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         z-index: 99999999;
         line-height: 1.2;
@@ -417,8 +512,15 @@
     }
 
     .zaglushka .col {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         height: 100%;
         width: 40%;
@@ -447,5 +549,9 @@
     .sub-footer .title a {
         font-size: 12px;
     }
+}
 
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    .key {}
 }

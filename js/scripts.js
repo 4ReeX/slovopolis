@@ -81,6 +81,11 @@ function letter2() {
     $('.shadow').addClass("blur");
 }
 
+function letter3() {
+    $('.popup, .shadow').toggleClass("hide");
+    $('.popup-content').load('letter3.html');
+    $('.shadow').addClass("blur");
+}
 function goToURL() {
     window.location.href = "index.html";
 }
@@ -100,3 +105,4 @@ function couponOpen() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('couponDescription.html');
 }
+
