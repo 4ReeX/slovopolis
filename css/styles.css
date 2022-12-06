@@ -22,7 +22,10 @@
     --blue: #20223f;
     --header-height: 40px;
     --footer-height: 70px;
-    --center-height: calc(100% - (var(--header-height) + var(--footer-height) + var(--subheader-height)))
+    --center-height: calc(100vh - (var(--header-height) + var(--footer-height) + var(--subheader-height)))
+}
+:root {
+    --app-height: 100%;
 }
 
 * {
@@ -82,7 +85,6 @@
 
 body {
     width: 100%;
-    height: 100vh;
     top: 0;
     left: 0;
     margin: 0;
@@ -93,6 +95,8 @@ body {
     text-align: center;
     position: absolute;
     overflow: hidden;
+    height: 100vh;
+    height: var(--app-height);
 }
 
 a {
@@ -2379,7 +2383,7 @@ img.light {
     width: 90%;
     height: 80px;
     margin: 20px auto 20px;
-    position: absolute;
+    position: relative;
     top: 10px;
     font-size: 4vh;
 }
