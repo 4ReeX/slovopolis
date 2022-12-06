@@ -643,6 +643,12 @@ a {
     -webkit-filter: brightness(0.5);
     filter: brightness(0.5);
 }
+.sm-btn .value .cri img {
+    max-width: 100%;
+    filter: hue-rotate(177deg);
+}
+
+
 
 .btn {
     display: -webkit-box;
@@ -3423,7 +3429,12 @@ a:hover {
 span.icon img {
     width: 20px;
 }
-
+span.icon img {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
 .welcome h1 {
     font-size: 26px;
     font-weight: 900;
