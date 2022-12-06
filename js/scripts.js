@@ -8,6 +8,7 @@ function closePopupShadow() {
 
 }
 function startGame() {
+    $('.popup').removeClass("overflow-v");
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('difficult.html');
     $('.shadow').addClass("blur");
