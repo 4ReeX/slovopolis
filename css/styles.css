@@ -1746,12 +1746,13 @@ img.psky {
     -webkit-filter: brightness(0.5)!important;
 }
 .game-over {
-    font-size: 14px;
+    font-size: 43px;
+    font-weight: 700;
     line-height: 1;
 }
 .game-over-btn {
-    -webkit-filter: hue-rotate(312deg) contrast(1.5);;
-    filter: hue-rotate(312deg) contrast(1.5);;
+    -webkit-filter: hue-rotate(312deg) contrast(1.5);
+    filter: hue-rotate(312deg) contrast(1.5);
 }
 
 img.light {

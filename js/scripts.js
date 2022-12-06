@@ -5,10 +5,12 @@ function closePopupShadow() {
     $('#popups').toggleClass("hide");
     $('.popup, .shadow').toggleClass("hide");
     $('.shadow').toggleClass("blur");
+
 }
 function startGame() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('difficult.html');
+    $('.shadow').addClass("blur");
 }
 function play() {
     $('.popup, .shadow').toggleClass("hide");
@@ -69,7 +71,7 @@ function closeWellcome() {
 
 function letter1() {
     $('.popup, .shadow').toggleClass("hide");
-    $('.popup-content').load("letter.html");
+    $('.popup-content').load("letter1.html");
     $('.shadow').addClass("blur");
 }
 
@@ -79,6 +81,11 @@ function letter2() {
     $('.shadow').addClass("blur");
 }
 
+function letter3() {
+    $('.popup, .shadow').toggleClass("hide");
+    $('.popup-content').load('letter3.html');
+    $('.shadow').addClass("blur");
+}
 function goToURL() {
     window.location.href = "index.html";
 }
@@ -98,3 +105,4 @@ function couponOpen() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('couponDescription.html');
 }
+

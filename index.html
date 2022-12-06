@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Телепат</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/media.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <meta name='viewport' content='width=device-width,initial-scale=0.9'/>
+    <title>Словополис</title>
+    <link rel="stylesheet" href="css/styles.css?1ssas">
+    <link rel="stylesheet" href="css/media.css?1asssd">
+    <link rel="stylesheet" href="css/animations.css?1asss">
+<!--    <meta name='viewport' content='width=device-width,initial-scale=0.9'/>-->
+    <meta name="viewport" content="width=device-width">
     <meta content='true' name='HandheldFriendly'/>
     <meta content='width' name='MobileOptimized'/>
     <meta content='yes' name='apple-mobile-web-app-capable'/>
@@ -16,7 +17,15 @@
     <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="only light">
+    <!-- place this in a head section -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
 </head>
 <body class="bg" onload="wellcome()">
 <!--<body class="bg">-->
@@ -29,9 +38,9 @@
                 </div>435
             </div>
         </a>
-        <div class="lvl">
-            1
-        </div>
+        <a class="puzzle-btn" title="Собери пазл и участвуй в розыгрыше призов" onclick="loadPuzzle();">
+            <span class="amount">0/25</span>
+        </a>
         <a class="cri" href="store.html">
             <div class="amount">
                 125<div class="icon-block">
