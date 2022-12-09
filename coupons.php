@@ -1,12 +1,18 @@
+<?php
+
+header('Last-Modified: ' . strftime('%F %T'));
+    header('ETag: ' . mt_rand(10000, 99999));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Словополис</title>
-    <link rel="stylesheet" href="css/styles.css?12324">
-    <link rel="stylesheet" href="css/media.css?124125">
+    <title>Телепат</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/animations.css">
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
@@ -14,6 +20,14 @@
     <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
+     <!-- place this in a head section -->
+     <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
 </head>
 <body class="bg">
 <div class="layout">
@@ -22,13 +36,13 @@
             <div class="amount">
                 <div class="icon-block">
                     <img src="img/wallet/star.svg" alt="">
-                </div>435
+                </div>444
             </div>
         </a>
         <div class="lvl">
             1
         </div>
-        <a class="cri" href="store.html">
+        <a class="cri" href="store2.php">
             <div class="amount">
                 125<div class="icon-block">
                 <img src="img/cri.png" alt="">
@@ -37,7 +51,6 @@
         </a>
     </div>
     <div class="center">
-        <div class="coupons">
             <div class="coupons-block">
                 <div class="coupon js-reveal">
                     <div class="row">
@@ -258,33 +271,32 @@
             </div>
         </div>
 
-    </div>
-    <div class="footer" id="footer">
-        <a class="sm-btn" title="Главная" id="ButtonHome" href="index.html">
+        <div class="footer" id="footer">
+        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.php">
             <div class="icon-block">
                 <img src="img/home.svg" alt="" class="icon home">
             </div>
+            <span class="text">
+                ГЛАВНАЯ
+            </span>
         </a>
-        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.php">
             <div class="icon-block">
                 <img src="img/user.svg" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn store" id="buttonStore" href="store.html">
+        <a class="sm-btn" id="buttonStore" href="store2.php">
             <div class="icon-block">
                 <img src="img/store.png" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn active" id="buttonCoupon" href="coupons.html">
+        <a class="sm-btn" id="buttonCoupon" href="coupons.php">
             <div class="icon-block">
                 <img src="img/coupin.svg" alt="" class="icon">
             </div>
-            <span class="text">
-                Промокоды
-            </span>
             <span class="coupons-amount">74</span>
         </a>
-        <a class="sm-btn" title="Правила игры" onclick="loadRules();" id="buttonRules">
+        <a class="sm-btn" title="Правила игры" href="game-words.php">
             <div class="icon-block">
                 <img src="img/help.svg" alt="" class="icon">
             </div>

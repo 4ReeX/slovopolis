@@ -15,7 +15,7 @@ function startGame() {
 }
 function play() {
     $('.popup, .shadow').toggleClass("hide");
-    window.location.href = "game-words.html";
+    window.location.href = "game-words.php";
 }
 function agree() {
     $('#loadContent').load('agree.html');
@@ -106,4 +106,6 @@ function couponOpen() {
     $('.popup, .shadow').toggleClass("hide");
     $('.popup-content').load('couponDescription.html');
 }
+
+
 

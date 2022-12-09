@@ -1,31 +1,31 @@
+<?php
+
+header('Last-Modified: ' . strftime('%F %T'));
+    header('ETag: ' . mt_rand(10000, 99999));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Словополис</title>
-    <link rel="stylesheet" href="css/styles.css?1ssas">
-    <link rel="stylesheet" href="css/media.css?1asssd">
-    <link rel="stylesheet" href="css/animations.css?1asss">
-<!--    <meta name='viewport' content='width=device-width,initial-scale=0.9'/>-->
-    <meta name="viewport" content="width=device-width">
-    <meta content='true' name='HandheldFriendly'/>
-    <meta content='width' name='MobileOptimized'/>
-    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <title>Телепат</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
     <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
-    <!-- place this in a head section -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
-    <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+     <!-- place this in a head section -->
+     <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
 </head>
 <body class="bg" onload="wellcome()">
 <!--<body class="bg">-->
@@ -35,7 +35,7 @@
             <div class="amount">
                 <div class="icon-block">
                     <img src="img/wallet/star.svg" alt="">
-                </div>435
+                </div>5555
             </div>
         </a>
         <a class="puzzle-btn" title="Собери пазл и участвуй в розыгрыше призов" onclick="loadPuzzle();">
@@ -50,7 +50,6 @@
         </a>
     </div>
     <div class="center">
-        <div class="level">
             <div class="block-level">
                 <div class="c1">
                     <div class="c2">
@@ -74,12 +73,11 @@
                 </a>
             </div>
 
-        </div>
 
 
     </div>
     <div class="footer" id="footer">
-        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.html">
+        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.php">
             <div class="icon-block">
                 <img src="img/home.svg" alt="" class="icon home">
             </div>
@@ -87,17 +85,17 @@
                 ГЛАВНАЯ
             </span>
         </a>
-        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.php">
             <div class="icon-block">
                 <img src="img/user.svg" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn" id="buttonStore" href="store.html">
+        <a class="sm-btn" id="buttonStore" href="store2.php">
             <div class="icon-block">
                 <img src="img/store.png" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn" id="buttonCoupon" href="coupons.html">
+        <a class="sm-btn" id="buttonCoupon" href="coupons.php">
             <div class="icon-block">
                 <img src="img/coupin.svg" alt="" class="icon">
             </div>
@@ -125,6 +123,18 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<script src="js/jquery.bubble.text.js"></script>
+<!-- <script src="js/jquery.bubble.text.js"></script> -->
+<script>
+   const appHeight = () => {
+        const doc = document.documentElement;
+        const layout = document.querySelector('.layout');
+        doc.style.setProperty('height', `${window.innerHeight}px`);
+        layout.style.setProperty('height', `${window.innerHeight}px`);
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
+
+</script>
 </body>
 </html>
+

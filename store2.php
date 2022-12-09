@@ -1,12 +1,18 @@
+<?php
+
+header('Last-Modified: ' . strftime('%F %T'));
+    header('ETag: ' . mt_rand(10000, 99999));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Телепат</title>
-    <link rel="stylesheet" href="css/styles.css?12324">
-    <link rel="stylesheet" href="css/media.css?124125">
+    <title>Словополис</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/animations.css">
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
@@ -34,7 +40,7 @@
             </div>
         </a>
         <div class="lvl">
-            2
+            3
         </div>
         <a class="cri" href="store.html">
             <div class="amount">
@@ -125,31 +131,31 @@
 
     </div>
     <div class="footer" id="footer">
-        <a class="sm-btn" title="Главная" id="ButtonHome" href="index.html">
+        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.php">
             <div class="icon-block">
                 <img src="img/home.svg" alt="" class="icon home">
             </div>
+            <span class="text">
+                ГЛАВНАЯ
+            </span>
         </a>
-        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.php">
             <div class="icon-block">
                 <img src="img/user.svg" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn active" title="Магазин" id="buttonStore" href="store.html">
+        <a class="sm-btn" id="buttonStore" href="store2.php">
             <div class="icon-block">
                 <img src="img/store.png" alt="" class="icon">
             </div>
-            <span class="text">
-                МАГАЗИН
-            </span>
         </a>
-        <a class="sm-btn" id="buttonCoupon" href="coupons.html">
+        <a class="sm-btn" id="buttonCoupon" href="coupons.php">
             <div class="icon-block">
                 <img src="img/coupin.svg" alt="" class="icon">
             </div>
             <span class="coupons-amount">74</span>
         </a>
-        <a class="sm-btn" title="Правила игры" onclick="loadRules();" id="buttonRules">
+        <a class="sm-btn" title="Правила игры" href="game-words.php">
             <div class="icon-block">
                 <img src="img/help.svg" alt="" class="icon">
             </div>
@@ -176,5 +182,16 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
+<script>
+   const appHeight = () => {
+        const doc = document.documentElement;
+        const layout = document.querySelector('.layout');
+        doc.style.setProperty('height', `${window.innerHeight}px`);
+        layout.style.setProperty('height', `${window.innerHeight}px`);
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
+
+</script>
 </body>
 </html>
