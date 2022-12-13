@@ -46,7 +46,7 @@
         </a>
     </div>
     <div class="center">
-            <div class="game">
+            <div class="game" id="gameScreen">
                 <div class="row">
                     <div class="key vis"></div>
                     <div class="key"></div>
@@ -111,56 +111,49 @@
                     <div class="key vis"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="word">
-                    <div class="row">
-                        <div class="key">А</div>
-                        <div class="key">Б</div>
-                        <div class="key">С</div>
-                        <div class="key">О</div>
-                        <div class="key">Л</div>
-                        <div class="key">Ю</div>
-                        <div class="key">Т</div>
+            <div class="column w100 inputBlock">
+                    <div class="word">
+                        АБРАКАДАБРА
+                    </div>
+                <div class="row userInput">
+                    <div class="column helper">
+                        <div class="sm-btn" title="Убрать букву" onclick="letter1();">
+                            <div class="icon-block gray">
+                                A
+                            </div>
+                            <div class="value">
+                                <div class="amount">5</div>
+                                <div class="cri"><img src="img/cri.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="sm-btn" title="Показать букву не на своем месте" onclick="letter2();">
+                            <div class="icon-block yellow">
+                                W
+                            </div>
+                            <div class="value">
+                                <div class="amount">25</div>
+                                <div class="cri"><img src="img/cri.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="sm-btn game-over-btn" title="Отказаться от игры" onclick="letter3();">
+                            <div class="icon-block game-over">
+                                &times;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu" id="radial">
+                        <div class="toggle"><img src="img/shuffle.png" alt=""></div>
+                        <ul class="circle-menu letters-6">
+                            <li class="elem"  style="--i:0;" id="one" onclick="loadWin()"><div class="letter">В</div></li>
+                            <li class="elem"  style="--i:1;" onclick="loadLose();"><div class="letter">П</div></li>
+                            <li class="elem"  style="--i:2;" id="two"><div class="letter">С</div></li>
+                            <li class="elem"  style="--i:3;"><div class="letter">О</div></li>
+                            <li class="elem"  style="--i:4;"><div class="letter">Л</div></li>
+                            <li class="elem"  style="--i:5;"><div class="letter">С</div></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="row w100 userInput">
-                <div class="column helper">
-                    <div class="sm-btn" title="Убрать букву" onclick="letter1();">
-                        <div class="icon-block gray">
-                            A
-                        </div>
-                        <div class="value">
-                            <div class="amount">5</div>
-                            <div class="cri"><img src="img/cri.png" alt=""></div>
-                        </div>
-                    </div>
-                    <div class="sm-btn" title="Показать букву не на своем месте" onclick="letter2();">
-                        <div class="icon-block yellow">
-                            W
-                        </div>
-                        <div class="value">
-                            <div class="amount">25</div>
-                            <div class="cri"><img src="img/cri.png" alt=""></div>
-                        </div>
-                    </div>
-                    <div class="sm-btn game-over-btn" title="Отказаться от игры" onclick="letter3();">
-                        <div class="icon-block game-over">
-                            &times;
-                        </div>
-                    </div>
-                </div>
-                <div class="menu" id="radial">
-                    <div class="toggle"><img src="img/shuffle.png" alt=""></div>
-                    <ul class="circle-menu letters-6">
-                        <li class="elem"  style="--i:0;" id="one" onclick="loadWin()"><div class="letter">В</div></li>
-                        <li class="elem"  style="--i:1;" onclick="loadLose();"><div class="letter">П</div></li>
-                        <li class="elem"  style="--i:2;" id="two"><div class="letter">С</div></li>
-                        <li class="elem"  style="--i:3;"><div class="letter">О</div></li>
-                        <li class="elem"  style="--i:4;"><div class="letter">Л</div></li>
-                        <li class="elem"  style="--i:5;"><div class="letter">С</div></li>
-                    </ul>
-                </div>
+
             </div>
     </div>
     <div class="footer" id="footer">
@@ -216,5 +209,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
+<script>
+    gameHeight = $('#gameScreen').innerHeight() - 160;
+    key = $(".key");
+    row = $("#gameScreen .row");
+    key.height(gameHeight/row.length);
+    key.width(gameHeight/row.length);
+    console.log("высота клеток: " + key.height());
+    console.log("ширина клеток: " + key.height());
+</script>
 </body>
 </html>

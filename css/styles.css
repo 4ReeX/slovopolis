@@ -814,21 +814,17 @@ a {
 
 .game {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2px;
     margin-bottom: 2px;
     box-sizing: border-box;
-    padding: 2px;
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.8);
 }
 
 .game .row {
+    min-height: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -845,8 +841,9 @@ a {
 }
 
 .game .row .key {
-    width: 1.2em;
-    height: 1.2em;
+    font-size: 10px;
+    padding: 8px;
+    min-width: 10px;
     border-radius: 2px;
     background-color: #ffffff;
     display: -webkit-box;
@@ -862,7 +859,6 @@ a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 34px;
     color: #000000;
     font-weight: 600;
     text-transform: uppercase;
@@ -876,8 +872,6 @@ a {
 }
 
 .game .row .job {
-    width: 1.2em;
-    height: 1.2em;
     border-radius: 2px;
     background-color: #2B86C5;
     display: -webkit-box;
@@ -903,8 +897,6 @@ a {
 }
 
 .text-block .key {
-    min-width: 7vh;
-    min-height: 7vh;
     border-radius: 10px;
     background-color: #ffffff;
     display: -webkit-box;
@@ -4101,27 +4093,6 @@ ul.circle-menu.letters-8 li .letter {
 }
 
 
-.word .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    height: 25px;
-    position: relative;
-    width: auto;
-    margin: 3px 0;
-    background: #a552ad;
-    border-radius: 5px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 20px;
-    font-size: 18px;
-}
-
 .vis {
     visibility: hidden !important;
     opacity: 0;
@@ -4435,8 +4406,53 @@ a.btn.new.delay-2 {
     -webkit-filter: hue-rotate(65deg);
 }
 
+.game .row {
+    margin: 0;
+}
+.column {
+    gap: 0!important;
+}
 .userInput {
     width: 100%;
     position: relative;
     display: flex;
+    max-height: 220px;
+}
+.helper .sm-btn {
+    margin: 5px 0;
+}
+
+
+.game {
+    width: 100%;
+    height: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.inputBlock {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 240px;
+}
+.word {
+    align-items: center;
+    background: #a552ad;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    height: 25px;
+    margin: 3px 0;
+    padding: 0 20px;
+    position: relative;
+    width: auto;
+}
+.game .row .key {
+    max-height: 46px;
 }
