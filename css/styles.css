@@ -114,9 +114,6 @@ a {
     -ms-flex-align: center;
     align-items: center;
     margin: 0 auto;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
 }
 .row {
     display: -webkit-box;
@@ -221,6 +218,8 @@ a {
     z-index: 999;
     font-size: 9px;
     font-weight: 900;
+    position: fixed;
+    bottom: 0;
 }
 
 .sub-footer .title a {
@@ -4434,4 +4433,10 @@ a.winners:hover {
 a.btn.new.delay-2 {
     filter: hue-rotate(65deg);
     -webkit-filter: hue-rotate(65deg);
+}
+
+.userInput {
+    width: 100%;
+    position: relative;
+    display: flex;
 }

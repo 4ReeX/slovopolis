@@ -15,7 +15,7 @@ function startGame() {
 }
 function play() {
     $('.popup, .shadow').toggleClass("hide");
-    window.location.href = "game-words.php";
+    window.location.href = "game-words.html";
 }
 function agree() {
     $('#loadContent').load('agree.html');

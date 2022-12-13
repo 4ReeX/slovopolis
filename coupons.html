@@ -1,8 +1,3 @@
-<?php
-
-header('Last-Modified: ' . strftime('%F %T'));
-    header('ETag: ' . mt_rand(10000, 99999));
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,32 +266,32 @@ header('Last-Modified: ' . strftime('%F %T'));
             </div>
         </div>
 
-        <div class="footer" id="footer">
-        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.php">
+    <div class="footer" id="footer">
+        <a class="sm-btn" title="Главная" id="ButtonHome" href="index.html">
             <div class="icon-block">
                 <img src="img/home.svg" alt="" class="icon home">
             </div>
-            <span class="text">
-                ГЛАВНАЯ
-            </span>
         </a>
-        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.php">
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
             <div class="icon-block">
                 <img src="img/user.svg" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn" id="buttonStore" href="store2.php">
+        <a class="sm-btn" id="buttonStore" href="store2.html">
             <div class="icon-block">
                 <img src="img/store.png" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn" id="buttonCoupon" href="coupons.php">
+        <a class="sm-btn active" id="buttonCoupon" href="coupons.html">
             <div class="icon-block">
                 <img src="img/coupin.svg" alt="" class="icon">
             </div>
             <span class="coupons-amount">74</span>
+            <span class="text">
+                ПРОМОКОДЫ
+            </span>
         </a>
-        <a class="sm-btn" title="Правила игры" href="game-words.php">
+        <a class="sm-btn" title="Правила игры" onclick="loadRules();" id="buttonRules">
             <div class="icon-block">
                 <img src="img/help.svg" alt="" class="icon">
             </div>

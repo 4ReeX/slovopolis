@@ -7,14 +7,16 @@ header('Last-Modified: ' . strftime('%F %T'));
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Телепат</title>
+    <title>Словополис</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/animations.css">
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <!--    <link rel="manifest" href="fav/site.webmanifest">-->
     <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
@@ -27,20 +29,19 @@ header('Last-Modified: ' . strftime('%F %T'));
      <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
      <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
 </head>
-<body class="bg" onload="wellcome()">
-<!--<body class="bg">-->
+<body class="bg">
 <div class="layout">
     <div class="header">
         <a class="coin" href="store.html">
             <div class="amount">
                 <div class="icon-block">
                     <img src="img/wallet/star.svg" alt="">
-                </div>5555
+                </div>5
             </div>
         </a>
-        <a class="puzzle-btn" title="Собери пазл и участвуй в розыгрыше призов" onclick="loadPuzzle();">
-            <span class="amount">0/25</span>
-        </a>
+        <div class="lvl">
+            3
+        </div>
         <a class="cri" href="store.html">
             <div class="amount">
                 125<div class="icon-block">
@@ -50,52 +51,105 @@ header('Last-Modified: ' . strftime('%F %T'));
         </a>
     </div>
     <div class="center">
-            <div class="block-level">
-                <div class="c1">
-                    <div class="c2">
-                        <div class="c3">
-                            <div class="number">1</div>
-                            <div class="text">Уровень</div>
-                        </div>
+        <div class="table-deck">
+            <a href="index.html" class="link back">
+                <span class="icon-back">
+                <span class="text">Назад в игру</span>
+                </span>
+            </a>
+            <div class="store_title">ыыы</div>
+            <div class="points">
+                <input type="range" min="5" max="100" step="5" value="5" id="point2diamond" list="list">
+                <datalist id="list">
+                    <option>5</option>
+                    <option>15</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </datalist><div class="value point">0</div>
+                <div class="txt"><img src="img/right.png" alt=""></div>
+                <div class="value diamond">0</div>
+                <div class="btn-block">
+                    <div class="label">
+                        за очки
                     </div>
+                    <div class="btn buy disable" onclick="buyLink();">Купить</div>
                 </div>
-            </div>
-            <div class="buttons-group">
-                <a class="btn new delay-2" onclick="startGame();">
-                    <div class="btn-text">
-                        Новая игра
-                    </div>
-                </a>
-                <a class="btn continue" onclick="startGame();">
-                    <div class="btn-text">
-                        Продолжить
-                    </div>
-                </a>
+
+
             </div>
 
+            <div class="rub">
+                <input type="range" value="0" step="20" min="0" max="500"  list="datalist"  id="rub2diamond">
+                <datalist id="datalist">
+                    <option>0</option>
+                    <option>5</option>
+                    <option>20</option>
+                    <option>100</option>
+                    <option>250</option>
+                    <option>500</option>
+                </datalist>
+                <div class="value ruble">0</div>
+                <div class="txt"><img src="img/right.png" alt=""></div>
+                <div class="value almaz">0</div>
+                <div class="btn-block">
+                    <div class="label">
+                        за рубли
+                    </div>
+                    <div class="btn buy" onclick="buyLink();">Купить</div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var p2d = document.querySelector('#point2diamond');
+            var r2d = document.querySelector('#rub2diamond');
+            let rangeValue = function() {
+                let point = document.querySelector('.point');
+                let diamond = document.querySelector('.diamond');
+                let pointValue = p2d.value;
+                let curse =  p2d.value * 30;
+                point.classList.toggle("warning");
+                point.innerHTML = curse;
+                diamond.innerHTML = pointValue;
+
+            }
+
+            let rangeValue2 = function() {
+                let almaz = document.querySelector('.almaz');
+                let ruble = document.querySelector('.ruble');
+                let pointValue = r2d.value;
+                let curseRub =  r2d.value;
+                ruble.innerHTML = curseRub;
+                almaz.innerHTML = pointValue;
+            }
+
+            p2d.addEventListener("input", rangeValue);
+            r2d.addEventListener("input", rangeValue2);
+        </script>
 
 
     </div>
     <div class="footer" id="footer">
-        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.php">
+        <a class="sm-btn" title="Главная" id="ButtonHome" href="index.html">
             <div class="icon-block">
                 <img src="img/home.svg" alt="" class="icon home">
             </div>
-            <span class="text">
-                ГЛАВНАЯ
-            </span>
         </a>
-        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.php">
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
             <div class="icon-block">
                 <img src="img/user.svg" alt="" class="icon">
             </div>
         </a>
-        <a class="sm-btn" id="buttonStore" href="store2.php">
+        <a class="sm-btn active" id="buttonStore" href="store2.html">
             <div class="icon-block">
                 <img src="img/store.png" alt="" class="icon">
             </div>
+            <span class="text">
+                МАГАЗИН
+            </span>
         </a>
-        <a class="sm-btn" id="buttonCoupon" href="coupons.php">
+        <a class="sm-btn" id="buttonCoupon" href="coupons.html">
             <div class="icon-block">
                 <img src="img/coupin.svg" alt="" class="icon">
             </div>
@@ -112,6 +166,11 @@ header('Last-Modified: ' . strftime('%F %T'));
     </div>
     <div class="shadow hide" onclick="closePopupShadow();"></div>
     <div class="popup hide">
+        <a class="close" onclick="closeBtn();">
+            <div class="icon-block">
+                <img src="img/close.svg" alt="" class="icon">
+            </div>
+        </a>
         <div class="popup-content"></div>
     </div>
 </div>
@@ -123,7 +182,6 @@ header('Last-Modified: ' . strftime('%F %T'));
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<!-- <script src="js/jquery.bubble.text.js"></script> -->
 <script>
    const appHeight = () => {
         const doc = document.documentElement;
@@ -137,4 +195,3 @@ header('Last-Modified: ' . strftime('%F %T'));
 </script>
 </body>
 </html>
-
