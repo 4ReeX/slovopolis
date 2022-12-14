@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Словополис</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <!--    <link rel="manifest" href="fav/site.webmanifest">-->
+    <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+     <!-- place this in a head section -->
+     <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+     <link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+</head>
+<body class="bg">
+<div class="layout ">
+    <div class="header ">
+        <a class="coin" href="https://slovopolis.beeline.ru/profile/store">
+            <div class="amount">
+                <div class="icon-block">
+                    <img src="https://slovopolis.beeline.ru/img/64/wallet/star.svg" />
+                </div>
+                <span id="summaryPoints" class="amount-value use-animation" data-value="146">146</span>
+            </div>
+
+        </a>
+        <div class="lvl ">
+            52
+        </div>
+        <a class="puzzle-btn hide" title="Собери пазл и участвуй в розыгрыше призов" onclick="showPuzzle([])">
+            <span class="amount">0/25</span>
+        </a>
+        <a class="cri" href="https://slovopolis.beeline.ru/profile/store">
+            <div class="amount">
+                <span id="summaryDiamonds" class="amount-value use-animation" data-value="202">202</span>
+                <div class="icon-block">
+                    <img src="https://slovopolis.beeline.ru/img/64/cri.png" />
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="center jcc">
+
+        <div id="crosswordField" class="game thegame"
+             data-check="https://slovopolis.beeline.ru/wordsjoin-166661/check"
+             data-home="https://slovopolis.beeline.ru/tasks"
+             data-tip="https://slovopolis.beeline.ru/wordsjoin-166661/tip">
+        </div>
+
+        <div class="row currentWordContainer">
+            <div class="word">
+                <div id="currentWord" class="row vis">
+                    <span class="word"></span>
+                    <span class="notice">- такое слово не загадано</span>
+                </div>
+            </div>
+        </div>
+        <div class="row w100 userInput">
+            <div class="column helper">
+                <div class="tip-action sm-btn" title="Показать букву в кроссворде" data-tip="14">
+                    <div class="icon-block gray">
+                        A
+                    </div>
+                    <div class="value">
+                        <div class="amount">5</div>
+                        <div class="cri"><img src="https://slovopolis.beeline.ru/img/64/cri.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="tip-action sm-btn" title="Показать слово" data-tip="15">
+                    <div class="icon-block yellow">
+                        W
+                    </div>
+                    <div class="value">
+                        <div class="amount">25</div>
+                        <div class="cri"><img src="https://slovopolis.beeline.ru/img/64/cri.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="sm-btn game-over-btn" title="Отказаться от игры" id="actionForceGameOver">
+                    <div class="icon-block game-over">
+                        &times;
+                    </div>
+                </div>
+            </div>
+            <div class="menu" id="radial" style="position: relative">
+
+                <div class="toggle" id="resetLettersButton">
+                    <img src="https://slovopolis.beeline.ru/img/64/shuffle.png" class="no-loading" alt="" />
+                    <img src="https://slovopolis.beeline.ru/img/64/clock.png" class="spin loading hide" />
+                    <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="processing icon hide" style="z-index:1"/>
+                </div>
+                <canvas id="lines" style="position: absolute; top:0; left:0"></canvas>
+                <ul id="lettersCircle" class="circle-menu">
+
+                    <li class="elem"  style="--i:0;" rel="а">
+                        <div class="letter">а</div>
+                    </li>
+                    <li class="elem"  style="--i:1;" rel="а">
+                        <div class="letter">а</div>
+                    </li>
+                    <li class="elem"  style="--i:2;" rel="б">
+                        <div class="letter">б</div>
+                    </li>
+                    <li class="elem"  style="--i:3;" rel="д">
+                        <div class="letter">д</div>
+                    </li>
+                    <li class="elem"  style="--i:4;" rel="н">
+                        <div class="letter">н</div>
+                    </li>
+                    <li class="elem"  style="--i:5;" rel="р">
+                        <div class="letter">р</div>
+                    </li>
+                    <li class="elem"  style="--i:6;" rel="у">
+                        <div class="letter">у</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <a class="sm-btn active" title="Главная" id="ButtonHome" href="index.html">
+            <div class="icon-block">
+                <img src="img/home.svg" alt="" class="icon home">
+            </div>
+            <span class="text">
+                ГЛАВНАЯ
+            </span>
+        </a>
+        <a class="sm-btn" title="Профиль" id="buttonProfile" href="profile.html">
+            <div class="icon-block">
+                <img src="img/user.svg" alt="" class="icon">
+            </div>
+        </a>
+        <a class="sm-btn" id="buttonStore" href="store2.html">
+            <div class="icon-block">
+                <img src="img/store.png" alt="" class="icon">
+            </div>
+        </a>
+        <a class="sm-btn" id="buttonCoupon" href="coupons.html">
+            <div class="icon-block">
+                <img src="img/coupin.svg" alt="" class="icon">
+            </div>
+            <span class="coupons-amount">74</span>
+        </a>
+        <a class="sm-btn" title="Правила игры" onclick="loadRules();" id="buttonRules">
+            <div class="icon-block">
+                <img src="img/help.svg" alt="" class="icon">
+            </div>
+        </a>
+    </div>
+    <div class="sub-footer " id="title">
+        <h1 class="title"><a href="https://slovopolis.beeline.ru/legal">Пользовательское соглашение</a> | <a href="https://slovopolis.beeline.ru/policy" target="_blank">Политика обработки данных</a></h1>
+    </div>
+
+    <div class="shadow hide"></div>
+
+    <div class="popup hide" id="popRules">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="rules-block">
+                <div class="sky"></div>
+                <div class="city"></div>
+                <div class="img-block rules" style="
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 60px;">
+                    <img src="https://slovopolis.beeline.ru/img/64/rules.svg" alt="" style="max-width: 220px;" />
+                </div>
+                <div class="text-block">
+                    <h1>Найдите спрятанные слова из предложенных букв.</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="popup dark hide" id="popPuzzle">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="lottery-title">
+                СОБЕРИ ПАЗЛ!
+            </div>
+            <div class="puzzle">
+                <div class="text">
+                    Собирайте элементы пазлов в игре и получайте 1000 кристаллов!
+                </div>
+                <img src="https://slovopolis.beeline.ru/img/64/puzzle/puzzle.png" alt="">
+                <div class="over" id="over">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1706.79 1710.42" id="svg">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #5d357c;
+                                    stroke: #1b0807;
+                                    stroke-miterlimit: 11.34;
+                                    stroke-width: 10px;
+                                }
+                                .hide {
+                                    opacity: 0;
+                                }
+                            </style>
+                        </defs>
+                        <g id="over1" data-name="over1">
+                            <g id="puzzlecontainer">
+                                <g id="puzzle">
+                                    <path class="cls-1 num-1" d="M345.16,345.16c-68-8.76-137.79,44.56-119.6-24.15s-119.22-68.71-68.71,0S73,328.15,5,345.16V8.4A3.4,3.4,0,0,1,8.4,5H345.16c-12.59,68,41.13,179.77-27.58,149.61s-68.71,107.24,0,68.71S353.12,277.13,345.16,345.16Z"/>
+                                    <path class="cls-1 num-2" d="M710.86,209.92c-68.72-44.65-34,67.21-25.54,135.24C617.28,335.32,517,376.71,562,308s-92.36-68.72-68.72,0-80.13,45.92-148.16,37.16c8-68,41.13-160.39-27.58-121.84s-68.71-98.9,0-68.71S332.57,73,345.16,5H685.32c-12.93,68-43.18,160.27,25.54,136.21S779.57,254.59,710.86,209.92Z"/>
+                                    <path class="cls-1 num-3" d="M1048.92,218.39c-68.72-17.6-37.54,58.74-23.45,126.77C957.44,358,833.09,316.58,882,385.3s-88.55,68.71-68.71,0S753.35,355,685.32,345.16c-8.42-68-43.18-179.89,25.54-135.24s68.71-92.75,0-68.71S672.39,73,685.32,5h340.15c-8.87,68-45.27,195.79,23.45,144.68S1117.63,236,1048.92,218.39Z"/>
+                                    <path class="cls-1 num-4" d="M1365.63,345.16c-68,1.61-177,47-151.88-21.69s-112.31-68.71-68.71,0-51.54,8.82-119.57,21.69c-14.09-68-45.27-144.37,23.45-126.77s68.71-119.82,0-68.71S1016.6,73,1025.47,5h340.16c-10.74,68,17.77,178.27-50.94,147.71s-68.71,106.9,0,68.72S1365.35,277.13,1365.63,345.16Z"/>
+                                    <path class="cls-1 num-5" d="M1701.79,5V345.22c-68.31,1.41-175.32,22.9-132.18-44.48,44-68.71-93.4-68.71-68.71,0s-67.24,42.8-135.27,44.42c-.28-68,17.77-161.89-50.94-123.73s-68.71-99.25,0-68.72S1354.89,73,1365.63,5Z"/>
+
+                                    <path class="cls-1" d="M5,8.4V5H8.4A3.4,3.4,0,0,0,5,8.4Z"/>
+
+                                    <path class="cls-1 num-6" d="M345.16,685.32c-68-9.81-194.18-23.25-148.71,45.46s-91.95,68.72-68.71,0S73,689.51,5,685.32V345.16c68-17,202.37,44.56,151.85-24.15s86.91-68.71,68.71,0,51.57,15.39,119.6,24.15c-8,68,22.93,191.28-45.78,151.57s-68.71,97.71,0,68.71S353.72,617.28,345.16,685.32Z"/>
+                                    <path class="cls-1 num-7" d="M685.32,685.32c-68-9.3-176.29,18.9-129.41-49.81s-90.53-68.71-68.71,0-74,59.61-142,49.81c8.56-68,22.93-148.88-45.78-119.88s-68.71-108.43,0-68.71,37.81-83.54,45.78-151.57c68,8.76,171.81,31.55,148.16-37.16s113.79-68.72,68.72,0,55.24,27.32,123.28,37.16c8.41,68,20.8,164.1-47.91,135.61s-68.71,108.9,0,68.71S669.24,617.28,685.32,685.32Z"/>
+                                    <path class="cls-1 num-8" d="M1025.47,685.32c-68-13-194.31,50.71-144.14-18s-87.25-68.72-68.71,0-59.27,27.29-127.3,18c-16.08-68,20.8-176.06-47.91-135.84s-68.71-97.23,0-68.71,56.32-67.58,47.91-135.61c68,9.83,147.77-28.58,127.92,40.14S930.82,454,882,385.3s75.49-27.27,143.52-40.14c14.09,68,46.72,169.42-22,133.48s-68.72,101.48,0,68.71S1032.25,617.28,1025.47,685.32Z"/>
+                                    <path class="cls-1 num-9" d="M1365.63,685.32c-68,7.08-180.11,35.26-137.31-33.45s-94.62-68.72-68.71,0-66.11,46.48-134.14,33.45c6.78-68,46.72-170.74-22-138s-68.72-104.65,0-68.71,36.08-65.45,22-133.48c68-12.87,163.19,47,119.57-21.69s93.83-68.71,68.71,0,83.85,23.3,151.88,21.69c.28,68,49.64,182-19.08,145.59s-68.71,101,0,68.71S1362.71,617.28,1365.63,685.32Z"/>
+                                    <path class="cls-1 num-10" d="M1701.79,345.22v340c-68.32-2.06-175.59-46.25-140.17,21.13,36.11,68.71-101.31,68.71-68.71,0s-59.25-28.15-127.28-21.06c-2.92-68,49.64-158.12-19.08-125.86s-68.71-105.17,0-68.71,19.36-77.56,19.08-145.59c68-1.62,160,24.29,135.27-44.42s112.73-68.71,68.71,0C1526.47,368.12,1633.48,346.63,1701.79,345.22Z"/>
+                                    <path class="cls-1 num-11" d="M345.16,1025.47c-68-10.2-178.61,41.62-143.89-27.1s-102.67-68.71-68.71,0S73,1015,5,1025.47V685.32c68,4.19,146-23.25,122.74,45.46s114.18,68.72,68.71,0,80.68-55.27,148.71-45.46c-8.56,68,22.25,175-46.46,141.44s-68.71,103.84,0,68.72S334.9,957.44,345.16,1025.47Z"/>
+                                    <path class="cls-1 num-12" d="M685.32,1025.47c-68,9.07-180.34,20.53-147.58-48.19s-104.65-68.71-68.71,0-55.84,58.4-123.87,48.19c-10.26-68,22.25-165.14-46.46-130s-68.71-102.31,0-68.72,37.9-73.41,46.46-141.44c68,9.8,163.87,18.9,142-49.81s115.6-68.71,68.71,0S617.28,676,685.32,685.32c16.07,68,42.26,153-26.45,135.66s-68.71,120,0,68.71S685.51,957.44,685.32,1025.47Z"/>
+                                    <path class="cls-1 num-13" d="M1043.22,880c-68.71-50.46-31.44,77.41-17.75,145.44-68-10.14-183.2-45.12-134.44,23.59s-88.67,68.71-68.72,0-69-32.66-137-23.59c.19-68,42.26-187.11-26.45-135.78s-68.71-86.11,0-68.71,42.52-67.63,26.45-135.66c68,9.29,145.84,50.71,127.3-18s118.88-68.72,68.71,0,76.11,5,144.14,18c-6.77,68-51,144.25,17.75,126S1111.93,930.46,1043.22,880Z"/>
+                                    <path class="cls-1 num-14" d="M1395.17,894c-68.71-46-38.64,63.49-29.54,131.52-68,7.23-170.3,47.51-123-21.2s-90.14-68.71-68.71,0-80.4,31.35-148.43,21.2c-13.69-68-51-195.9,17.75-145.44s68.71-87,0-68.71-24.52-58-17.75-126c68,13,160,35.26,134.14-33.45s111.51-68.72,68.71,0,69.28,40.53,137.31,33.45c2.92,68-39.17,162.65,29.54,139.91S1463.88,940,1395.17,894Z"/>
+                                    <path class="cls-1 num-15" d="M1701.79,685.25v339.66c-67.53-8.33-154.53,42.28-118-25.09,37.22-68.71-100.2-68.71-68.71,0s-81.41,18.42-149.44,25.65c-9.1-68-39.17-177.5,29.54-131.52s68.71-91.42,0-68.72-26.62-71.88-29.54-139.91c68-7.09,159.87-47.65,127.28,21.06s104.82,68.71,68.71,0C1526.2,639,1633.47,683.19,1701.79,685.25Z"/>
+                                    <path class="cls-1 num-16" d="M364.21,1237.16c-68.71-32.76-9.39,60.44-19,128.47-68-10.83-180.48-21.51-131.73,47.2s-88.69,68.71-68.71,0S73,1354.69,5,1365.63V1025.47c68-10.43,161.55,41.62,127.56-27.1s103.46-68.71,68.71,0,75.86,16.9,143.89,27.1c10.26,68-49.66,178.93,19,143S432.92,1270,364.21,1237.16Z"/>
+                                    <path class="cls-1 num-17" d="M685.32,1365.63c-68-13.15-183.29,42.61-141.06-26.11s-95.16-68.71-68.71,0-62.36,36.94-130.39,26.11c9.66-68-49.66-161.23,19-128.47s68.71-104.62,0-68.71-8.79-75-19-143C413.19,1035.68,505,1046,469,977.28s101.48-68.71,68.71,0,79.54,57.26,147.58,48.19c-.2,68,20.92,169.12-47.8,138.84s-68.71,107.13,0,68.72S680.07,1297.6,685.32,1365.63Z"/>
+                                    <path class="cls-1 num-18" d="M1049.74,1216.19c-68.71-50.52-21.52,81.41-24.27,149.44-68,10.72-154.26,31.81-130.7-36.91s-113.87-68.71-68.71,0-72.71,50.06-140.74,36.91c-5.25-68,20.92-171-47.8-132.6s-68.71-99,0-68.72,47.6-70.81,47.8-138.84c68-9.07,156.95-45.12,137,23.59s117.47,68.71,68.72,0,66.41-33.73,134.44-23.59c13.69,68-44.44,140.2,24.27,122S1118.45,1266.7,1049.74,1216.19Z"/>
+
+                                    <path class="cls-1" d="M6.86,1705.42H5v-3A3.39,3.39,0,0,0,6.86,1705.42Z"/>
+
+                                    <path class="cls-1 num-19" d="M1412.46,1218.57c-68.71-28.26-49.49,79-46.83,147.06-68-10.86-183.09-34.84-133.23,33.87s-87.56,68.72-68.71,0-70.19-44.58-138.22-33.87c2.75-68-44.44-200,24.27-149.44s68.71-86.91,0-68.71-10.58-54-24.27-122c68,10.15,169.86,47.51,148.43-21.2s116-68.71,68.71,0,55,28.43,123,21.2c9.1,68-21.88,164.84,46.83,124.39S1481.17,1246.83,1412.46,1218.57Z"/>
+                                    <path class="cls-1 num-20" d="M1701.79,1024.91v340.8c-68.73,1.77-186.39,29.06-136.71-38.32,50.65-68.71-86.77-68.71-68.72,0s-62.7,49.1-130.73,38.24c-2.66-68-21.88-175.32,46.83-147.06s68.71-109.16,0-68.71-37.73-56.36-46.83-124.39c68-7.23,180.91,43.06,149.44-25.65s105.93-68.71,68.71,0C1547.26,1067.19,1634.26,1016.58,1701.79,1024.91Z"/>
+                                    <path class="cls-1 num-21" d="M377.47,1576.58c-68.59-28.66-32,60.86-32.31,128.84H6.86a3.39,3.39,0,0,1-1.86-3V1365.63c68-10.94,159.68-21.51,139.72,47.2s117.44,68.71,68.71,0,63.7-58,131.73-47.2c-9.67,68-36.4,182.24,32.31,142.24S446.18,1605.3,377.47,1576.58Z"/>
+                                    <path class="cls-1 num-22" d="M685.33,1705.42H345.16c.32-68-36.28-157.5,32.31-128.84s68.71-108.7,0-68.71-42-74.21-32.31-142.24c68,10.83,156.87,42.61,130.39-26.11s111-68.71,68.71,0,73,13,141.06,26.11c5.24,68,25.73,174.13-43,149.24s-68.71,112.54,0,68.72S686.31,1637.41,685.33,1705.42Z"/>
+                                    <path class="cls-1 num-23" d="M1025.47,1705.42H685.33c1-68,25.6-165.58-43-121.83s-68.71-93.6,0-68.72,48.22-81.21,43-149.24c68,13.15,185.89,31.81,140.74-36.91s92.26-68.71,68.71,0,62.67,47.63,130.7,36.91c-2.75,68,28.69,165.46-40,141.82s-68.71,113.78,0,68.71S1024.85,1637.38,1025.47,1705.42Z"/>
+                                    <path class="cls-1 num-24" d="M1398.34,1583.9c-68.59-30.3-19.94,53.55-32.64,121.52H1025.47c-.62-68,28.57-174.25-40-129.26s-68.71-92.35,0-68.71,37.27-73.79,40-141.82c68-10.71,157.07-34.84,138.22,33.87s118.57,68.72,68.71,0,65.2-44.73,133.23-33.87c2.67,68-36,187.91,32.71,149.56S1467.05,1614.29,1398.34,1583.9Z"/>
+                                    <path class="cls-1 num-25" d="M1701.79,1365.71v339.71H1365.7c12.7-68-36-151.82,32.64-121.52s68.71-107,0-68.71-30-81.53-32.71-149.56c68,10.86,148.79,30.47,130.73-38.24s119.37-68.71,68.72,0C1515.4,1394.77,1633.06,1367.48,1701.79,1365.71Z"/>
+
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+                <div class="text-puzzle">0/25</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup hide" id="popError">
+        <div class="title relative">
+            <div class="big red">Внимание!</div>
+            <div class="small">Введено некорректное слово</div>
+        </div>
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="content-block">
+            <div class="image">
+                <img src="https://slovopolis.beeline.ru/img/64/lose.png" alt="" class="imgwin" />
+            </div>        </div>
+        <div class="popup-footer">
+            <a class="btn btn-text-medium" onclick="closePopup()">Продолжить</a>
+        </div>
+    </div>
+
+    <div class="popup hide" id="popWin">
+        <div class="title relative">
+            <div class="big">Поздравляем!</div>
+            <div class="small">с <span class="green"><span id="winCountWords">1</span>м</span> успешно разгаданным кроссвордом!</div>
+        </div>
+        <div class="content-block">
+            <div class="image">
+                <img src="https://slovopolis.beeline.ru/img/64/win.png" alt="" class="imgwin" />
+            </div>
+            <div class="prizes">
+                <a class="row" href="https://slovopolis.beeline.ru/profile/store">
+                    <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/wallet/staricon.png" alt="" /></div>
+                    <div class="value">x<span class="amount" data-num="0" id="winCountPoints" rel="summaryPoints">0</span></div>
+                </a>
+                <a class="row" href="https://slovopolis.beeline.ru/profile/store">
+                    <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/wallet/criicon.png" alt="" /></div>
+                    <div class="value">x<span class="amount" data-num="0" id="winCountDiamonds" rel="summaryDiamonds">0</span></div>
+                </a>
+                <a class="row hide" href="https://slovopolis.beeline.ru/profile/promocode">
+                    <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/wallet/promocode.png" alt="" /></div>
+                    <div class="value">x<span class="amount" data-num="0" id="winCountPrize">0</span></div>
+                </a>
+                <a class="row hide" href="https://slovopolis.beeline.ru/profile?puzzle">
+                    <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/wallet/puzzleicon.png" alt="" /></div>
+                    <div class="value">x<span class="amount" data-num="0" id="winCountPuzzles">0</span></div>
+                </a>
+            </div>
+
+        </div>
+        <div class="popup-footer">
+            <a class="btn btn-text-medium" id="winNextUrl" href="#">Продолжить</a>
+        </div>
+    </div>
+
+    <div class="popup hide" id="popTips14">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="welcome sky podskaz">
+                <div class="grass"></div>
+                <div class="text-block">
+                    <h1>Описание подсказки:</h1>
+                    <div class="desc">
+                        Показать букву в кроссворде<br />
+                        <span id="popTipsContent14">
+                            Cтоимость 5
+                        </span>
+                        <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/cri.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <div id="popTips14Action" class="btn ">Активировать</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup hide" id="popTips15">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="welcome sky podskaz">
+                <div class="grass"></div>
+                <div class="text-block">
+                    <h1>Описание подсказки:</h1>
+                    <div class="desc">
+                        Показать слово<br />
+                        <span id="popTipsContent15">
+                            Cтоимость 25
+                        </span>
+                        <div class="icon"><img src="https://slovopolis.beeline.ru/img/64/cri.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <div id="popTips15Action" class="btn ">Активировать</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup hide" id="insufficientFunds">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="welcome sky podskaz">
+                <div class="grass"></div>
+                <div class="text-block">
+                    <h1>Вам не хватает кристаллов</h1>
+                    <div class="desc">
+                        <span id="insufficientFundsText">
+                            Xотите купить <span id="insufficientFundsTextCount">50</span> шт за <span id="insufficientFundsTextPrice">20</span> рублей?
+                        </span>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <div class="buttons-group">
+                        <a class="btn new delay-2" href="https://slovopolis.beeline.ru/profile/store">
+                            <span class="btn-text">
+                                Купить
+                            </span>
+                        </a>
+                        <a class="btn continue" onclick="closePopup();">
+                            <span class="btn-text">
+                                Отменить
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup hide" id="popForceGameOver">
+        <a class="close" onclick="closePopup();">
+            <div class="icon-block">
+                <img src="https://slovopolis.beeline.ru/img/64/close.svg" class="icon" />
+            </div>
+        </a>
+        <div class="popup-content">
+            <div class="welcome sky podskaz">
+                <div class="grass"></div>
+                <div class="text-block">
+                    <h1>Завершить игру?</h1>
+                    <div class="desc">
+                        Вы всегда сможете начать новую игру
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <div class="buttons-group">
+                        <a class="btn new delay-2" onClick="closePopup();">
+                            <span class="btn-text">
+                                Нет
+                            </span>
+                        </a>
+                        <a class="btn continue" href="https://slovopolis.beeline.ru/game/wordsjoin/force-complete">
+                            <span class="btn-text">
+                                Да
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="zaglushka">
+    <div class="col"><img src="https://slovopolis.beeline.ru/img/64/sova-rotate.png" alt=""></div>
+    <div class="col">Пожалуйста переверните телефон в <br>
+        <span>вертикальное положение.</span> <br> Так ведь намного удобнее ;)
+    </div>
+</div>
+
+<script src="https://slovopolis.beeline.ru/js/manifest.js"></script>
+<script src="https://slovopolis.beeline.ru/js/jquery/jquery-1.10.2.min.js"></script>
+<script src="https://slovopolis.beeline.ru/js/jquery/jquery.bubble.text.js"></script>
+<script src="https://slovopolis.beeline.ru/js/jquery.common.js"></script>
+
+<script src="/js/wordsjoin.js?id=2da2a063332b9979c177a50c19ce5a55"></script>
+<script src="/js/words.js?id=2900741f6356404b7af44a88c1510949"></script>
+<script>
+    (function () {
+        wordsjoinInit(
+            6,
+            7,
+            JSON.parse('["а","а","б","д","н","р","у"]'),
+            JSON.parse('[[0,0,0,0,1,0],[1,1,1,1,1,0],[1,0,0,0,1,0],[1,1,1,1,1,0],[1,0,0,0,1,0],[1,0,0,0,1,0],[0,1,1,1,1,1]]'),
+            JSON.parse('[]'),
+        )
+    })();
+</script>
+<script>
+    function showAnimatedPointsAfterWin () {
+
+        ['#winCountPoints', '#winCountDiamonds'].forEach(function (value) {
+            let parentPoints = $('#'+$(value).attr('rel'))
+            parentPoints.text( parseInt(parentPoints.text().trim()) + parseInt($(value).text().trim()))
+        })
+
+        animateAmounts('.amount-value.use-animation')
+    }
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(90915850, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90915850" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    gameHeight = $('#gameScreen').innerHeight() - 160;
+    key = $(".key");
+    row = $("#gameScreen .row");
+    key.height(gameHeight/row.length);
+    key.width(gameHeight/row.length);
+    console.log("высота клеток: " + key.height());
+    console.log("ширина клеток: " + key.height());
+</script>
+</body>
+</html>
