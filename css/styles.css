@@ -4457,3 +4457,7 @@ a.btn.new.delay-2 {
     max-height: 46px;
     font-size: 20px;
 }
+
+.layout {
+    height: 100vh;
+}
